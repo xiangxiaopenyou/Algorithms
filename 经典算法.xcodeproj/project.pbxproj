@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C202269254BB1E90036D31A /* string_algorithms.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C202268254BB1E90036D31A /* string_algorithms.c */; };
 		6C4F70F62542832F00FC3699 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C4F70F52542832F00FC3699 /* main.c */; };
+		6C4F710F2542A6C200FC3699 /* array_algorithms.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C4F710E2542A6C200FC3699 /* array_algorithms.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6C202267254BB1E90036D31A /* string_algorithms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = string_algorithms.h; sourceTree = "<group>"; };
+		6C202268254BB1E90036D31A /* string_algorithms.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = string_algorithms.c; sourceTree = "<group>"; };
 		6C4F70F22542832F00FC3699 /* 经典算法 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "经典算法"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4F70F52542832F00FC3699 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		6C4F710D2542A6C200FC3699 /* array_algorithms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array_algorithms.h; sourceTree = "<group>"; };
+		6C4F710E2542A6C200FC3699 /* array_algorithms.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = array_algorithms.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C202266254BB1C50036D31A /* 字符串 */ = {
+			isa = PBXGroup;
+			children = (
+				6C202267254BB1E90036D31A /* string_algorithms.h */,
+				6C202268254BB1E90036D31A /* string_algorithms.c */,
+			);
+			path = "字符串";
+			sourceTree = "<group>";
+		};
 		6C4F70E92542832F00FC3699 = {
 			isa = PBXGroup;
 			children = (
@@ -57,9 +72,20 @@
 		6C4F70F42542832F00FC3699 /* 经典算法 */ = {
 			isa = PBXGroup;
 			children = (
+				6C202266254BB1C50036D31A /* 字符串 */,
+				6C4F71012542844800FC3699 /* 数组 */,
 				6C4F70F52542832F00FC3699 /* main.c */,
 			);
 			path = "经典算法";
+			sourceTree = "<group>";
+		};
+		6C4F71012542844800FC3699 /* 数组 */ = {
+			isa = PBXGroup;
+			children = (
+				6C4F710D2542A6C200FC3699 /* array_algorithms.h */,
+				6C4F710E2542A6C200FC3699 /* array_algorithms.c */,
+			);
+			path = "数组";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +144,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C202269254BB1E90036D31A /* string_algorithms.c in Sources */,
+				6C4F710F2542A6C200FC3699 /* array_algorithms.c in Sources */,
 				6C4F70F62542832F00FC3699 /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
