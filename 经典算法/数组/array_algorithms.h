@@ -8,6 +8,10 @@
 #ifndef array_algorithms_h
 #define array_algorithms_h
 
+enum sort_method {
+    method_quick = 0   // 快速排序
+};
+
 #include <stdio.h>
 
 
@@ -15,5 +19,14 @@
 /// @param nums 数组
 /// @param numSize 数组大小
 void moveZeroes(int *nums, int numSize);
+
+
+/// 将int数组升序排列
+/// @param nums 数组
+/// @param numsSize 数组大小
+int * sortArray(int* nums, int numsSize);
+
+/// 快速排序数组
+void quickSort(int *nums, int left, int right);
 
 #endif /* array_algorithms_h */
