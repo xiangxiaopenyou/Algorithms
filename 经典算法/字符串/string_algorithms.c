@@ -55,7 +55,7 @@ char * reverseWords(char *s) {
     }
     unsigned long length = strlen(s) - 1;
     while (s[length] == ' ') {
-        // 末尾字符是空格时设置为\0，并且删除最后字符
+        // 末尾字符是空格时设置为\0用于删除最后字符
         s[length] = '\0';
         length --;
     }
@@ -119,4 +119,75 @@ char * reverseLeftWords(char *s, int n) {
     result[k] = '\0';
     printf("left:%s\n", result);
     return result;
+}
+
+char resultString(char s) {
+    if (s == '}') {
+        return '{';
+    }
+    if (s == ']') {
+        return '[';
+    }
+    if (s == ')') {
+        return '(';
+    }
+    return 0;
+}
+
+bool isValidString(char *s) {
+    int length = (int)strlen(s);
+    if (length % 2 == 1) {
+        // 括号成对出现，所以当长度为单数时直接返回错误
+        return false;
+    }
+    // 保存字符数组
+    int valid[length + 1];
+    int top = 0;
+    for (int i = 0; i < strlen(s); i++) {
+        // 获取对应字符('('对应')','['对应']','{'对应'}')
+        char ch = resultString(s[i]);
+        if (ch) {
+            if (top == 0 || valid[top - 1] != ch) {
+                // 如果获取到了对应字符，说明当前字符为')'或者']'或者'}'，此时如果数组为空或者最后元素部位对应字符，则直接返回错误
+                return false;
+            }
+            top--;
+        } else {
+            // 如果没有获取到对应字符，说明当前字符为'('或者'['或者'{'，将字符加入到数组中
+            valid[top++] = s[i];
+        }
+    }
+    return top == 0;
+}
+
+
+
+int lengthOfLongestSubstring(char * s) {
+    int length = (int)strlen(s);
+    // 最长长度
+    int longest = 0;
+    // 当前统计长度
+    int count = 0;
+    // 当前下标
+    int current = 0;
+    // 用哈希数组储存下标
+    int hash[128];
+    memset(hash, -1, sizeof(hash));
+    for (int i = 0; i < length; i++) {
+        if (hash[s[i]] >= current) {
+            // 利用哈希找到重复的字符，当前下标更新为重复字符下一个位置
+            current = hash[s[i]] + 1;
+            // 重置当前长度
+            count = i - current;
+        }
+        // 储存下标
+        hash[s[i]] = i;
+        // 不重复长度加1
+        count++;
+        if (count > longest) {
+            longest = count;
+        }
+    }
+    printf("最长子串长度:%d\n", longest);
+    return longest;
 }

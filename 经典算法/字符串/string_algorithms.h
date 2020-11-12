@@ -5,6 +5,8 @@
 //  Created by zhangdu_imac on 2020/10/30.
 //
 
+#include <stdbool.h>
+
 #ifndef string_algorithms_h
 #define string_algorithms_h
 
@@ -35,5 +37,16 @@ char * reverseWords(char *s);
 /// @param s 字符串
 /// @param n 需要旋转的字符个数
 char* reverseLeftWords(char *s, int n);
+
+/// 判断只包括 '('，')'，'{'，'}'，'['，']' 的字符串是否有效。
+/// 有效字符串需满足：
+/// 左括号必须用相同类型的右括号闭合。
+/// 左括号必须以正确的顺序闭合。
+/// @param s 字符串
+bool isValidString(char *s);
+
+/// 找出字符串中不含有重复字符的 最长子串 的长度。
+/// @param s 字符串
+int lengthOfLongestSubstring(char * s);
 
 #endif /* string_algorithms_h */
