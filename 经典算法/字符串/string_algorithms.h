@@ -21,13 +21,6 @@ enum reverse_string_method {
 /// @param s 字符串
 void reverseString(char *s, enum reverse_string_method method);
 
-/// 反转字符串
-/// @param s 字符串
-/// @param start 开始索引
-/// @param end 结束索引
-void reverse(char *s, int start, unsigned long end);
-
-
 /// 逐个反转字符串中的每个单词，单词本身不反转（空格分割单词，输出单词之间不能存在多个空格）
 /// 输入"Hello   world"，输出"world Hello"
 /// @param s 字符串

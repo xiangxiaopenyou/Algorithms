@@ -45,6 +45,15 @@ void reverseString(char *s, enum reverse_string_method method) {
     
 }
 
+void reverse(char *s, int start, unsigned long end) {
+    char temp;
+    while (start < end) {
+        temp = s[start];
+        s[start++] = s[end];
+        s[end--] = temp;
+    }
+}
+
 char * reverseWords(char *s) {
     while (*s == ' ') {
         // 首字符是空格时指针后移一位取消头部空格
@@ -89,15 +98,6 @@ char * reverseWords(char *s) {
     return s;
 }
 
-
-void reverse(char *s, int start, unsigned long end) {
-    char temp;
-    while (start < end) {
-        temp = s[start];
-        s[start++] = s[end];
-        s[end--] = temp;
-    }
-}
 
 char * reverseLeftWords(char *s, int n) {
     int length = (int)strlen(s), k = 0;
