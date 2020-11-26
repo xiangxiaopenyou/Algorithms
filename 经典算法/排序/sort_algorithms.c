@@ -70,3 +70,20 @@ int * quicklySort(int *nums, int low, int high) {
     
     return nums;
 }
+
+int binarySearch(int *nums, int numsSize, int target)  {
+    int left = 0, right = numsSize - 1;
+    while (left < right) {
+        int mid = (left + right) / 2;
+        if (nums[mid] == target) {
+            printf("二分查找：%d\n", mid);
+            return mid;
+        } else if (nums[mid] > target) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+    // 找不到时返回-1
+    return -1;
+}

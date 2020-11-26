@@ -42,4 +42,8 @@ bool isValidString(char *s);
 /// @param s 字符串
 int lengthOfLongestSubstring(char * s);
 
+/// 字符串中的第一个唯一字符
+/// @param s 字符串
+int firstUniqChar(char * s);
+
 #endif /* string_algorithms_h */

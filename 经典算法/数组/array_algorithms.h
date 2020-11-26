@@ -13,6 +13,7 @@ enum sort_method {
 };
 
 #include <stdio.h>
+#include <stdbool.h>
 
 
 /// 将int数组中的所有0移到末尾，并保持其他元素顺序不变（在原数组上操作）
@@ -40,5 +41,16 @@ void mergeArrays(int *nums1, int nums1Size, int m, int *nums2, int nums2Size, in
 /// @param numsSize 数组大小
 /// @param target 目标值
 int *twoSum(int* nums, int numsSize, int target);
+
+/// 统计小于n的质数的数量
+/// @param n 非负整数
+int countPrimes(int n);
+
+/// 判断有序二维数组中（从左到右递增，从上到下递增）是否含有某整数
+/// @param matrix 二维数组
+/// @param matrixSize 第二层数组元素个数（矩阵列数）
+/// @param matrixColSize 第一层数组元素个数（矩阵行数）
+/// @param target 目标整数
+bool findNumberIn2DArray(int matrix[5][5], int matrixSize, int matrixColSize, int target);
 
 #endif /* array_algorithms_h */

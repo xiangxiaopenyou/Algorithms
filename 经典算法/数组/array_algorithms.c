@@ -7,6 +7,7 @@
 
 #include "array_algorithms.h"
 #include <stdlib.h>
+#include <string.h>
 
 void moveZeroes(int *nums, int numSize) {
 //    int j = 0;
@@ -114,4 +115,44 @@ int *twoSum(int* nums, int numsSize, int target) {
         }
     }
     return NULL;
+}
+
+int countPrimes(int n) {
+    if (n == 0 || n == 1 || n == 2) {
+        return 0;
+    }
+    int *primes = malloc(sizeof(int) * n);
+    // 设置所有元素为0
+    memset(primes, 0, sizeof(int) * n);
+    int count = 0;
+    for (int i = 2; i < n; i++) {
+        if (primes[i] == 0) {
+            count++;
+            for (int j = i; j < n; j += i) {
+                // 筛选出所有i的倍数
+                primes[j] = 1;
+            }
+        }
+        
+    }
+    printf("countPrimes:%d\n", count);
+    return count;
+}
+
+bool findNumberIn2DArray(int matrix[5][5], int matrixSize, int matrixColSize, int target) {
+    // 从矩阵左下角元素开始查找
+    int col = matrixColSize - 1;
+    int row = 0;
+    while (row < matrixSize && col >= 0) {
+        if (matrix[col][row] == target) {
+            return true;
+        } else if (matrix[col][row] > target) {
+            // 大于目标值时往上查找
+            col--;
+        } else {
+            // 小于目标值时往右查找
+            row++;
+        }
+    }
+    return false;
 }

@@ -191,3 +191,22 @@ int lengthOfLongestSubstring(char * s) {
     printf("最长子串长度:%d\n", longest);
     return longest;
 }
+
+int firstUniqChar(char * s) {
+    int length = (int)strlen(s);
+    if (length == 0) {
+        return -1;
+    }
+    int hash[26];
+    memset(hash, 0, sizeof(hash));
+    // hash思想保存重复字符出现次数
+    for (int i = 0; i < length; i++) {
+        hash[s[i] - 'a']++;
+    }
+    for (int j = 0; j < length; j++) {
+        if (hash[s[j] - 'a'] == 1) {
+            return j;
+        }
+    }
+    return -1;
+}
