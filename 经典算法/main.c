@@ -71,13 +71,17 @@ int main(int argc, const char * argv[]) {
     
     // 判断有序二维数组中是否含有某整数
     int findNumberArray[5][5] = {
-        {1, 4,  7, 11, 15},
-        {2, 5,  8, 12, 19},
-        {3, 6,  9, 16, 22},
+        {1, 4, 7, 11, 15},
+        {2, 5, 8, 12, 19},
+        {3, 6, 9, 16, 22},
         {10, 13, 14, 17, 24},
         {18, 21, 23, 26, 30},
     };
     findNumberIn2DArray(findNumberArray, 5, 5, 5);
+    
+    // 寻找数组中唯一重复数
+    int duplicateArray[] = {3,1,3,4,2};
+    findDuplicate(duplicateArray, 5);
     
     return 0;
 }

@@ -133,7 +133,6 @@ int countPrimes(int n) {
                 primes[j] = 1;
             }
         }
-        
     }
     printf("countPrimes:%d\n", count);
     return count;
@@ -155,4 +154,26 @@ bool findNumberIn2DArray(int matrix[5][5], int matrixSize, int matrixColSize, in
         }
     }
     return false;
+}
+
+int findDuplicate(int* nums, int numsSize) {
+    int left = 1, right = numsSize - 1;
+    while (left < right) {
+        // 统计在[left, mid]区间的数个数
+        int count = 0;
+        // 中位数
+        int mid = (left + right) / 2;
+        for (int i = 0; i < numsSize; i++) {
+            if (nums[i] <= mid) {
+                count++;
+            }
+        }
+        if (count <= mid) {
+            left = mid + 1;
+        } else {
+            right = mid;
+        }
+    }
+    printf("唯一重复是：%d\n", left);
+    return left;
 }

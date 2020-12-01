@@ -53,4 +53,9 @@ int countPrimes(int n);
 /// @param target 目标整数
 bool findNumberIn2DArray(int matrix[5][5], int matrixSize, int matrixColSize, int target);
 
+/// 寻找数组中唯一重复数，n+1个整数的数组nums，其数字都在1到n之间
+/// @param nums 数组
+/// @param numsSize 数组大小
+int findDuplicate(int* nums, int numsSize);
+
 #endif /* array_algorithms_h */
