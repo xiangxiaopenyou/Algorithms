@@ -29,7 +29,7 @@ int main(int argc, const char * argv[]) {
     // 找字符串中不含重复字符的最长子串
     char longest[] = "dvdf";
     lengthOfLongestSubstring(longest);
-    
+
     firstUniqChar(longest);
 
     // 移动数组中的0到数组末尾
@@ -61,14 +61,14 @@ int main(int argc, const char * argv[]) {
     // 快速排序
     int quicklyArray[] = {6, 8, 1, 5, 4, 3, 7, 9, 0, 2};
     quicklySort(quicklyArray, 0, 9);
-    
+
     // 二分查找
     int binaryArray[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     binarySearch(binaryArray, 10, 5);
-    
+
     // 小于n的质数的数量
     countPrimes(10);
-    
+
     // 判断有序二维数组中是否含有某整数
     int findNumberArray[5][5] = {
         {1, 4, 7, 11, 15},
@@ -78,10 +78,11 @@ int main(int argc, const char * argv[]) {
         {18, 21, 23, 26, 30},
     };
     findNumberIn2DArray(findNumberArray, 5, 5, 5);
-    
+
     // 寻找数组中唯一重复数
     int duplicateArray[] = {3,1,3,4,2};
     findDuplicate(duplicateArray, 5);
     
     return 0;
 }
+

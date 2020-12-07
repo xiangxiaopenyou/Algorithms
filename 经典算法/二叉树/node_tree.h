@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 
+/// 翻转二叉树
 struct TreeNode* invertTree(struct TreeNode* root);
 
 #endif /* node_tree_h */

@@ -177,3 +177,11 @@ int findDuplicate(int* nums, int numsSize) {
     printf("唯一重复是：%d\n", left);
     return left;
 }
+
+int findSingle(int* nums, int numsSize) {
+    int find = nums[0];
+    for (int i = 1; i < numsSize; i++) {
+        find = find^nums[i];
+    }
+    return find;
+}

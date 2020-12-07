@@ -58,4 +58,9 @@ bool findNumberIn2DArray(int matrix[5][5], int matrixSize, int matrixColSize, in
 /// @param numsSize 数组大小
 int findDuplicate(int* nums, int numsSize);
 
+/// 寻找数组中唯一不重复数
+/// @param nums 数组
+/// @param numsSize 数组大小
+int findSingle(int* nums, int numsSize);
+
 #endif /* array_algorithms_h */
