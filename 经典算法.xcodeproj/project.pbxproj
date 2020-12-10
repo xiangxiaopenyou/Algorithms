@@ -12,6 +12,7 @@
 		6C3393322562518900CDB9CA /* node_tree.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C3393312562518900CDB9CA /* node_tree.c */; };
 		6C4F70F62542832F00FC3699 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C4F70F52542832F00FC3699 /* main.c */; };
 		6C4F710F2542A6C200FC3699 /* array_algorithms.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C4F710E2542A6C200FC3699 /* array_algorithms.c */; };
+		6C66ABD72580BB650096D6F3 /* others_algorithms.c in Sources */ = {isa = PBXBuildFile; fileRef = 6C66ABD62580BB650096D6F3 /* others_algorithms.c */; };
 		6CFC231E257783FB00398FD0 /* list_node.c in Sources */ = {isa = PBXBuildFile; fileRef = 6CFC231D257783FB00398FD0 /* list_node.c */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,8 @@
 		6C4F70F52542832F00FC3699 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		6C4F710D2542A6C200FC3699 /* array_algorithms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = array_algorithms.h; sourceTree = "<group>"; };
 		6C4F710E2542A6C200FC3699 /* array_algorithms.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = array_algorithms.c; sourceTree = "<group>"; };
+		6C66ABD52580BB650096D6F3 /* others_algorithms.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = others_algorithms.h; sourceTree = "<group>"; };
+		6C66ABD62580BB650096D6F3 /* others_algorithms.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = others_algorithms.c; sourceTree = "<group>"; };
 		6CFC231C257783FB00398FD0 /* list_node.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = list_node.h; sourceTree = "<group>"; };
 		6CFC231D257783FB00398FD0 /* list_node.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = list_node.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,6 +107,7 @@
 				6C098012255E27940014321E /* 排序 */,
 				6C202266254BB1C50036D31A /* 字符串 */,
 				6C4F71012542844800FC3699 /* 数组 */,
+				6C66ABD42580BB480096D6F3 /* 其他 */,
 				6C4F70F52542832F00FC3699 /* main.c */,
 			);
 			path = "经典算法";
@@ -116,6 +120,15 @@
 				6C4F710E2542A6C200FC3699 /* array_algorithms.c */,
 			);
 			path = "数组";
+			sourceTree = "<group>";
+		};
+		6C66ABD42580BB480096D6F3 /* 其他 */ = {
+			isa = PBXGroup;
+			children = (
+				6C66ABD52580BB650096D6F3 /* others_algorithms.h */,
+				6C66ABD62580BB650096D6F3 /* others_algorithms.c */,
+			);
+			path = "其他";
 			sourceTree = "<group>";
 		};
 		6CFC231B257783C600398FD0 /* 链表 */ = {
@@ -186,6 +199,7 @@
 				6C3393322562518900CDB9CA /* node_tree.c in Sources */,
 				6C202269254BB1E90036D31A /* string_algorithms.c in Sources */,
 				6C4F710F2542A6C200FC3699 /* array_algorithms.c in Sources */,
+				6C66ABD72580BB650096D6F3 /* others_algorithms.c in Sources */,
 				6CFC231E257783FB00398FD0 /* list_node.c in Sources */,
 				6C4F70F62542832F00FC3699 /* main.c in Sources */,
 				6C098015255E27C20014321E /* sort_algorithms.c in Sources */,

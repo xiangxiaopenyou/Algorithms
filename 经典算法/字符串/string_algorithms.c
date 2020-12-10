@@ -9,6 +9,7 @@
 
 #include <string.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 void reverseString(char *s, enum reverse_string_method method) {
     if (s == NULL) {
@@ -209,4 +210,54 @@ int firstUniqChar(char * s) {
         }
     }
     return -1;
+}
+
+bool isPalindrome(char * s) {
+    if (strlen(s) == 0) {
+        // 空字符串返回true
+        return true;
+    }
+    int length = (int)strlen(s);
+    // 保存一个删除了特殊字符的字符串
+    char *temp = malloc(sizeof(char) * (length + 1));
+    int r = 0;
+    for (int i = 0; i < length; i++) {
+        if (isdigit(s[i]) || islower(s[i])) {
+            // 数字和小写字母直接保存
+            temp[r++] = s[i];
+        } else if (isupper(s[i])) {
+            // 大写字母转为小写字母保存
+            temp[r++] = s[i] + 32;
+        }
+    }
+    // 结束符
+    temp[r] = '\0';
+    int tempLength = (int)strlen(temp);
+    // 对比字符串是否回文串
+    for (int j = 0; j < tempLength / 2; j++) {
+        if (temp[j] != temp[tempLength - j - 1]) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool isAnagram(char * s, char * t){
+    int length_s = (int)strlen(s);
+    int length_t = (int)strlen(t);
+    if (length_s != length_t) {
+        return false;
+    }
+    int hash[26];
+    memset(hash, 0, sizeof(hash));
+    for (int i = 0; i < length_s; i++) {
+        hash[s[i] - 'a']++;
+    }
+    for (int j = 0; j < length_t; j++) {
+        hash[t[j] - 'a']--;
+        if (hash[t[j] - 'a'] < 0) {
+            return false;
+        }
+    }
+    return true;
 }

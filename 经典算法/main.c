@@ -9,6 +9,7 @@
 #include "array_algorithms.h"
 #include "string_algorithms.h"
 #include "sort_algorithms.h"
+#include "others_algorithms.h"
 
 #include <string.h>
 
@@ -30,7 +31,14 @@ int main(int argc, const char * argv[]) {
     char longest[] = "dvdf";
     lengthOfLongestSubstring(longest);
 
+    // 字符串中第一个唯一字符
     firstUniqChar(longest);
+    
+    // 回文串判断
+    isPalindrome("A man, a plan, a canal: Panama");
+    
+    // 有效的字母异位词
+    isAnagram("rat", "car");
 
     // 移动数组中的0到数组末尾
     int array[] = {0, 1, 0, 3, 12};
@@ -82,6 +90,16 @@ int main(int argc, const char * argv[]) {
     // 寻找数组中唯一重复数
     int duplicateArray[] = {3,1,3,4,2};
     findDuplicate(duplicateArray, 5);
+    
+    // 寻找数组中唯一不重复数
+    int singleArray[] = {1, 1, 2, 2, 3, 5, 5};
+    findSingle(singleArray, 7);
+    
+    // 计算平方根
+    mySqrt(16);
+    
+    // 反转整数
+    reverseNum(1534236469);
     
     return 0;
 }

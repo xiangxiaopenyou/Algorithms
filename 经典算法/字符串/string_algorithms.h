@@ -46,4 +46,11 @@ int lengthOfLongestSubstring(char * s);
 /// @param s 字符串
 int firstUniqChar(char * s);
 
+/// 判断字符串是否为回文串
+/// @param s 字符串
+bool isPalindrome(char * s);
+
+/// 给定两个字符串，判断是否字母异位词
+bool isAnagram(char * s, char * t);
+
 #endif /* string_algorithms_h */
