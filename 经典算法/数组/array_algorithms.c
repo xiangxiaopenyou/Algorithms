@@ -186,3 +186,20 @@ int findSingle(int* nums, int numsSize) {
     printf("唯一不重复数：%d\n", find);
     return find;
 }
+
+int removeDuplicates(int* nums, int numsSize) {
+    if (numsSize < 2) {
+        return numsSize;
+    }
+    // 重复数数量统计
+    int duplicateNum = 0;
+    for (int i = 0; i < numsSize - 1; i ++) {
+        if (nums[i] == nums[i + 1]) {
+            // 遇到重复数字加一
+            duplicateNum++;
+        }
+        nums[i + 1 - duplicateNum] = nums[i + 1];
+    }
+    printf("有序数组删除重复元素以后元素个数：%d", (numsSize - duplicateNum));
+    return (numsSize - duplicateNum);
+}

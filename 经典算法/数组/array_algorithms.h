@@ -63,4 +63,9 @@ int findDuplicate(int* nums, int numsSize);
 /// @param numsSize 数组大小
 int findSingle(int* nums, int numsSize);
 
+/// 删除有序数组中重复元素
+/// @param nums 数组
+/// @param numsSize 数组大小
+int removeDuplicates(int* nums, int numsSize);
+
 #endif /* array_algorithms_h */
