@@ -8,6 +8,7 @@
 #include "array_algorithms.h"
 #include <stdlib.h>
 #include <string.h>
+#include <strhash.h>
 
 void moveZeroes(int *nums, int numSize) {
 //    int j = 0;
@@ -115,6 +116,26 @@ int *twoSum(int* nums, int numsSize, int target) {
         }
     }
     return NULL;
+}
+
+int *twoSum2(int* nums, int numsSize, int target, int* returnSize) {
+    int *result = malloc(sizeof(int) * 2);
+    int i = 0, j = numsSize - 1;
+    while (i < j) {
+        if (nums[i] + nums[j] == target) {
+            result[0] = nums[i];
+            result[1] = nums[j];
+            printf("有序两数之和：%d, 有序两数之和：%d\n", result[0], result[1]);
+            return result;
+        } else if (nums[i] + nums[j] < target) {
+            // 左指针右移
+            i++;
+        } else {
+            // 右指针左移
+            j--;
+        }
+    }
+    return result;
 }
 
 int countPrimes(int n) {

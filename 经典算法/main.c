@@ -57,6 +57,10 @@ int main(int argc, const char * argv[]) {
     // 两数之和
     int sumArray[] = {2, 7, 11, 15};
     twoSum(sumArray, 4, 9);
+    
+    // 两数之和（有序数组
+    int sumArray2[] = {2, 7, 11, 15};
+    twoSum2(sumArray2, 4, 9, 2);
 
     // 冒泡排序
     int bubbleArray[] = {7, 4, 1, 0, 5, 9, 8};

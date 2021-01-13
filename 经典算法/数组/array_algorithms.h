@@ -42,6 +42,13 @@ void mergeArrays(int *nums1, int nums1Size, int m, int *nums2, int nums2Size, in
 /// @param target 目标值
 int *twoSum(int* nums, int numsSize, int target);
 
+/// 两数之和：输入一个递增排序的数组和一个目标值，在数组中查找两个数，使得它们的和正好是s
+/// @param nums 有序递增数组
+/// @param numsSize 数组大小
+/// @param target 目标值
+/// @param returnSize returnSize
+int *twoSum2(int* nums, int numsSize, int target, int* returnSize);
+
 /// 统计小于n的质数的数量
 /// @param n 非负整数
 int countPrimes(int n);
