@@ -60,7 +60,11 @@ int main(int argc, const char * argv[]) {
     
     // 两数之和（有序数组
     int sumArray2[] = {2, 7, 11, 15};
-    twoSum2(sumArray2, 4, 9, 2);
+    twoSum2(sumArray2, 4, 9);
+    
+    
+    int nums[] = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+    maxSubArray(nums, 9);
 
     // 冒泡排序
     int bubbleArray[] = {7, 4, 1, 0, 5, 9, 8};

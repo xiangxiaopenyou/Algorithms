@@ -46,8 +46,12 @@ int *twoSum(int* nums, int numsSize, int target);
 /// @param nums 有序递增数组
 /// @param numsSize 数组大小
 /// @param target 目标值
-/// @param returnSize returnSize
-int *twoSum2(int* nums, int numsSize, int target, int* returnSize);
+int *twoSum2(int* nums, int numsSize, int target);
+
+/// 输入一个整型数组，数组中的一个或连续多个整数组成一个子数组。求所有子数组的和的最大值
+/// @param nums 数组
+/// @param numsSize 数组大小
+int maxSubArray(int* nums, int numsSize);
 
 /// 统计小于n的质数的数量
 /// @param n 非负整数

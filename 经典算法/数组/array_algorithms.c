@@ -118,7 +118,7 @@ int *twoSum(int* nums, int numsSize, int target) {
     return NULL;
 }
 
-int *twoSum2(int* nums, int numsSize, int target, int* returnSize) {
+int *twoSum2(int* nums, int numsSize, int target) {
     int *result = malloc(sizeof(int) * 2);
     int i = 0, j = numsSize - 1;
     while (i < j) {
@@ -135,6 +135,29 @@ int *twoSum2(int* nums, int numsSize, int target, int* returnSize) {
             j--;
         }
     }
+    return result;
+}
+
+int maxSubArray(int* nums, int numsSize) {
+    if (numsSize == 0) {
+        return 0;
+    }
+    // 当前最大值
+    int currentMax = nums[0];
+    // 保存结果
+    int result = currentMax;
+    for (int i = 1; i < numsSize; i++) {
+        if (nums[i] + currentMax < nums[i]) {
+            // 当前最大值加当前值小于当前值时，直接取当前值，舍弃之前的值
+            currentMax = nums[i];
+        } else {
+            currentMax += nums[i];
+        }
+        if (result < currentMax) {
+            result = currentMax;
+        }
+    }
+    printf("所有子数组的和的最大值:%d", result);
     return result;
 }
 
