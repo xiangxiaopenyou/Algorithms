@@ -79,4 +79,9 @@ int findSingle(int* nums, int numsSize);
 /// @param numsSize 数组大小
 int removeDuplicates(int* nums, int numsSize);
 
+/// 找出数组中任一重复的数字
+/// @param nums 数组
+/// @param numsSize 数组大小
+int findRepeatNumber(int* nums, int numsSize);
+
 #endif /* array_algorithms_h */

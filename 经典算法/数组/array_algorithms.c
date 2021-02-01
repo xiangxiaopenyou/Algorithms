@@ -247,3 +247,15 @@ int removeDuplicates(int* nums, int numsSize) {
     printf("有序数组删除重复元素以后元素个数：%d", (numsSize - duplicateNum));
     return (numsSize - duplicateNum);
 }
+
+int findRepeatNumber(int* nums, int numsSize) {
+    // 哈希思想
+    int *hash = malloc(sizeof(int) * numsSize);
+    for (int i = 0; i < numsSize; i++) {
+        if (hash[nums[i]] == 1) {
+            return nums[i];
+        }
+        hash[nums[i]] = 1;
+    }
+    return -1;
+}
