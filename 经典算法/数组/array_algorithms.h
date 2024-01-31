@@ -79,9 +79,17 @@ int findSingle(int* nums, int numsSize);
 /// @param numsSize 数组大小
 int removeDuplicates(int* nums, int numsSize);
 
+int removeDuplicates1(int* nums, int numsSize);
+
+/// 使得出现次数超过两次的元素只出现两次 ，返回删除后数组的新长度
+int removeDuplicates2(int* nums, int numsSize);
+
 /// 找出数组中任一重复的数字
 /// @param nums 数组
 /// @param numsSize 数组大小
 int findRepeatNumber(int* nums, int numsSize);
+
+/// 最大连续1的个数
+int findMaxConsecutiveOnes(int* nums, int numsSize);
 
 #endif /* array_algorithms_h */

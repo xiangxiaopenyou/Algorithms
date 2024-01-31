@@ -261,3 +261,15 @@ bool isAnagram(char * s, char * t){
     }
     return true;
 }
+
+
+void reverseString5(char *string) {
+    int length = (int)strlen(string);
+    int i = 0, j = length - 1;
+    while (i < j) {
+        char temp = string[j];
+        string[j--] = string[i];
+        string[i++] = temp;
+    }
+    printf("反转字符串:%s\n", string);
+}

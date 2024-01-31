@@ -19,7 +19,7 @@ enum reverse_string_method {
 
 /// 反转字符串
 /// @param s 字符串
-void reverseString(char *s, enum reverse_string_method method);
+//void reverseString(char *s, enum reverse_string_method method);
 
 /// 逐个反转字符串中的每个单词，单词本身不反转（空格分割单词，输出单词之间不能存在多个空格）
 /// 输入"Hello   world"，输出"world Hello"
@@ -52,5 +52,7 @@ bool isPalindrome(char * s);
 
 /// 给定两个字符串，判断是否字母异位词
 bool isAnagram(char * s, char * t);
+
+void reverseString5(char *string);
 
 #endif /* string_algorithms_h */

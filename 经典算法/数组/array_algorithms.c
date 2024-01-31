@@ -19,17 +19,19 @@ void moveZeroes(int *nums, int numSize) {
 //        }
 //    }
 //    // 末尾补0
-//    for (int k = 0; k < j; k++) {
-//        nums[k + j] = 0;
+//    for (int k = j; k < numSize; k++) {
+//        nums[k] = 0;
 //    }
     
     int m = 0;
     for (int i = 0; i < numSize; i++) {
         if (nums[i] == 0) {
             m++;
-        } else if (m > 0) {
-            nums[i - m] = nums[i];
-            nums[i] = 0;
+        } else {
+            if (m > 0) {
+                nums[i - m] = nums[i];
+                nums[i] = 0;
+            }
         }
     }
     
@@ -248,6 +250,46 @@ int removeDuplicates(int* nums, int numsSize) {
     return (numsSize - duplicateNum);
 }
 
+int removeDuplicates1(int* nums, int numsSize) {
+    if (numsSize < 2) {
+        return numsSize;
+    }
+    // 快慢指针
+    int slow = 0;
+    int fast = 1;
+    while (fast < numsSize) {
+        if (nums[slow] != nums[fast]) {
+            nums[++slow] = nums[fast];
+        }
+        fast++;
+    }
+    return slow + 1;
+}
+
+int removeDuplicates2(int* nums, int numsSize) {
+    if (numsSize < 2) {
+        return numsSize;
+    }
+    int slow = 0, fast = 1;
+    // 保存出现次数
+    int count = 1;
+    while (fast < numsSize) {
+        if (nums[slow] == nums[fast]) {
+            count++;
+            if (count == 2) {
+                slow ++;
+                nums[slow] = nums[slow - 1];
+            }
+        } else {
+            // 计数清空
+            count = 1;
+            nums[++slow] = nums[fast];
+        }
+        fast++;
+    }
+    return slow + 1;
+}
+
 int findRepeatNumber(int* nums, int numsSize) {
     // 哈希思想
     int *hash = malloc(sizeof(int) * numsSize);
@@ -258,4 +300,20 @@ int findRepeatNumber(int* nums, int numsSize) {
         hash[nums[i]] = 1;
     }
     return -1;
+}
+
+int findMaxConsecutiveOnes(int* nums, int numsSize) {
+    int max = 0;
+    int currentLength = 0;
+    for (int i = 0; i < numsSize; i++) {
+        if (nums[i] == 1) {
+            currentLength++;
+        } else {
+            if (currentLength > max) {
+                max = currentLength;
+            }
+            currentLength = 0;
+        }
+    }
+    return currentLength > max ? currentLength : max;
 }

@@ -87,3 +87,39 @@ int binarySearch(int *nums, int numsSize, int target)  {
     // 找不到时返回-1
     return -1;
 }
+
+
+void bubbleSort1(int *nums, int numsSize) {
+    for (int i = 0; i < numsSize - 1; i++) {
+        for (int j = 0; j < numsSize - i - 1; j++) {
+            int num1 = nums[j], num2 = nums[j+1];
+            if (nums[j] > nums[j + 1]) {
+                int temp = nums[j+1];
+                nums[j+1] = nums[j];
+                nums[j] = temp;
+            }
+        }
+    }
+    for (int i = 0; i < numsSize; i++) {
+        printf("冒泡：%d\n", nums[i]);
+    }
+}
+
+void selectionSort1(int *nums, int numsSize) {
+    for (int i = 0; i < numsSize - 1; i++) {
+        int min = i;
+        for (int j = i + 1; j < numsSize; j++) {
+            if (nums[j] < nums[min]) {
+                min = j;
+            }
+        }
+        if (min != i) {
+            int temp = nums[min];
+            nums[min] = nums[i];
+            nums[i] = temp;
+        }
+    }
+    for (int i = 0; i < numsSize; i++) {
+        printf("选择：%d\n", nums[i]);
+    }
+}

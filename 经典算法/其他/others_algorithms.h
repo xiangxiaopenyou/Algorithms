@@ -32,4 +32,10 @@ int reverseNum(int x);
 // 给定 word = "ABCB", 返回 false
 bool exist(char** board, int boardSize, int* boardColSize, char * word);
 
+/// 斐波那契数
+int fib(int n);
+
+/// 台阶
+int trainWays(int num);
+
 #endif /* others_algorithms_h */

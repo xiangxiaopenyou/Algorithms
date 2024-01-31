@@ -87,3 +87,19 @@ bool exist(char** board, int boardSize, int* boardColSize, char * word) {
     }
     return false;
 }
+
+
+int trainWays(int num) {
+    if (num <= 2) {
+        return num;
+    }
+    int a = 1, b = 2, fib = 0;
+    for (int i = 3; i <= num; i++) {
+        fib = a + b;
+        a = b;
+        b = fib;
+    }
+    return fib % 1000000007;
+}
+
+
