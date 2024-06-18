@@ -92,4 +92,7 @@ int findRepeatNumber(int* nums, int numsSize);
 /// 最大连续1的个数
 int findMaxConsecutiveOnes(int* nums, int numsSize);
 
+/// 移除元素
+int removeElement(int* nums, int numsSize, int val);
+
 #endif /* array_algorithms_h */

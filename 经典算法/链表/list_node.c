@@ -9,18 +9,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-struct ListNode* reverseList5(struct ListNode* head) {
-    struct ListNode *res = head;
-    struct ListNode *pre = NULL;
-    while (res) {
-        struct ListNode *temp = res->next;
-        res->next = pre;
-        pre = res;
-        res = temp;
-    }
-    return pre;
-}
-
 
 struct ListNode* reverseList(struct ListNode* head) {
     struct ListNode *previous = NULL;
@@ -113,4 +101,65 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
 //        res = res / 10;
 //    }
 //    return currentNode;
+}
+
+
+struct ListNode* swapPairs(struct ListNode* head) {
+    if (head == NULL || head->next == NULL) {
+        return head;
+    }
+    struct ListNode *slow = head;
+    struct ListNode *fast = head->next;
+    struct ListNode *result = head->next;
+    struct ListNode *temp;
+    while (fast != NULL) {
+        temp = fast->next;
+        fast->next = slow;
+        if (temp == NULL) {
+            // 双数最后一组数据，交换后设置尾节点的next节点为NULL
+            slow->next = NULL;
+            return result;
+        } else if (temp->next == NULL) {
+            // 单数最后一个节点直接设置为尾节点返回
+            slow->next = temp;
+            return result;
+        } else {
+            // 下一组 fast和slow
+            slow->next = temp->next;
+            slow = temp;
+            fast = temp->next;
+        }
+    }
+    return result;
+}
+
+struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
+//    struct ListNode *head = (struct ListNode *)malloc(sizeof(struct ListNode));
+//    struct ListNode *cur = head;
+//    while (list1 != NULL && list2 != NULL) {
+//        if (list1->val >= list2->val) {
+//            cur->next = list2;
+//            list2 = list2->next;
+//        } else {
+//            cur->next = list1;
+//            list1 = list1->next;
+//        }
+//        cur = cur->next;
+//    }
+//    // 合并剩下节点
+//    cur->next = list1 == NULL ? list2 : list1;
+//    return head->next;
+    
+    
+    if (list1 == NULL) {
+        return list2;
+    } else if (list2 == NULL) {
+        return list1;
+    } else if (list1->val < list2->val) {
+        list1->next = mergeTwoLists(list1->next, list2);
+        return list1;
+    } else {
+        list2->next = mergeTwoLists(list1, list2->next);
+        return list2;
+    }
 }

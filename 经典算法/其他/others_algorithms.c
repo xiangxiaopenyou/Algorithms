@@ -102,4 +102,35 @@ int trainWays(int num) {
     return fib % 1000000007;
 }
 
+int maxProfit(int* prices, int pricesSize) {
+    // 买入的最低价格
+    int min = prices[0];
+    // 利润
+    int profit = 0;
+    for (int i = 1; i < pricesSize; i++) {
+        if (prices[i] < min) {
+            min = prices[i];
+        } else if (prices[i] - min > profit) {
+            profit = prices[i] - min;
+        }
+    }
+    return profit;
+}
+
+// [7, 1, 5, 3, 6, 4]
+int maxProfit2(int* prices, int pricesSize) {
+    int price = prices[0];
+    int profit = 0;
+    for (int i = 1; i < pricesSize; i ++) {
+        if (prices[i] < price) {
+            price = prices[i];
+        } else if (prices[i] > price) {
+            // 累计收益
+            profit += prices[i] - price;// 4
+            price = prices[i];
+        }
+    }
+    return price;
+}
+
 

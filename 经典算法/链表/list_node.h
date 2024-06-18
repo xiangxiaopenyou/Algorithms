@@ -15,12 +15,16 @@ struct ListNode {
     struct ListNode *next;
 };
 
-struct ListNode* reverseList5(struct ListNode* head);
-
 /// 反转链表
 struct ListNode* reverseList(struct ListNode* head);
 
 /// 两数相加
 struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2);
+
+/// 两两交换节点
+struct ListNode* swapPairs(struct ListNode* head);
+
+/// 合并两个有序链表
+struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2);
 
 #endif /* list_node_h */

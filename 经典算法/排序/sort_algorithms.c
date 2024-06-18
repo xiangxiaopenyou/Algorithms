@@ -60,6 +60,9 @@ int * quicklySort(int *nums, int low, int high) {
         }
         nums[right] = nums[left];
     }
+    for (int k = 0; k <= high; k++) {
+        printf("快速排序：%d\n", nums[k]);
+    }
     nums[left] = key;
     quicklySort(nums, low, left - 1);
     quicklySort(nums, left + 1, high);
@@ -92,7 +95,6 @@ int binarySearch(int *nums, int numsSize, int target)  {
 void bubbleSort1(int *nums, int numsSize) {
     for (int i = 0; i < numsSize - 1; i++) {
         for (int j = 0; j < numsSize - i - 1; j++) {
-            int num1 = nums[j], num2 = nums[j+1];
             if (nums[j] > nums[j + 1]) {
                 int temp = nums[j+1];
                 nums[j+1] = nums[j];

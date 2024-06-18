@@ -42,5 +42,3 @@ bool isBalance(struct TreeNode* root) {
     int rightDepth = TreeDepth(right);
     return (abs(leftDepth - rightDepth) <= 1) && isBalance(left) && isBalance(right);
 }
-
-

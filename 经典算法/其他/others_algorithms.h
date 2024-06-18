@@ -38,4 +38,9 @@ int fib(int n);
 /// 台阶
 int trainWays(int num);
 
+/// 买卖股票的最佳时机（买卖一次）
+int maxProfit(int* prices, int pricesSize);
+/// 买卖股票的最佳时机（买卖多次）
+int maxProfit2(int* prices, int pricesSize);
+
 #endif /* others_algorithms_h */
